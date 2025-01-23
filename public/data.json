@@ -1,0 +1,154 @@
+{
+    "questions": [
+        {
+            "question": "¿Cuál es el resultado de 2 + '2' en JavaScript?",
+            "options": ["22", "4", "NaN", "undefined"],
+            "answer": "22"
+        },
+        {
+            "question": "¿Qué método se usa para agregar un elemento al final de un array en JavaScript?",
+            "options": ["push()", "pop()", "shift()", "unshift()"],
+            "answer": "push()"
+        },
+        {
+            "question": "¿Cómo se declara una variable en JavaScript?",
+            "options": ["var", "let", "const", "todas las anteriores"],
+            "answer": "todas las anteriores"
+        },
+        {
+            "question": "¿Qué devuelve el operador typeof en JavaScript?",
+            "options": [
+                "El tipo de dato de una variable",
+                "El valor de la variable",
+                "Un error",
+                "Una cadena vacía"
+            ],
+            "answer": "El tipo de dato de una variable"
+        },
+        {
+            "question": "¿Cuál es el resultado de 5 === '5' en JavaScript?",
+            "options": ["true", "false", "undefined", "NaN"],
+            "answer": "false"
+        },
+        {
+            "question": "¿Qué hace el método .map() en un array?",
+            "options": [
+                "Modifica el array original",
+                "Devuelve un nuevo array con los resultados de la función aplicada",
+                "Elimina elementos del array",
+                "Ordena el array"
+            ],
+            "answer": "Devuelve un nuevo array con los resultados de la función aplicada"
+        },
+        {
+            "question": "¿Qué es un closure en JavaScript?",
+            "options": [
+                "Una función que se ejecuta en un contexto global",
+                "Una función dentro de otra que tiene acceso a las variables de la función externa",
+                "Una variable declarada globalmente",
+                "Un tipo de error"
+            ],
+            "answer": "Una función dentro de otra que tiene acceso a las variables de la función externa"
+        },
+        {
+            "question": "¿Cuál es la diferencia entre == y === en JavaScript?",
+            "options": [
+                "== compara solo los valores, === compara valores y tipos",
+                "== compara valores y tipos, === solo valores",
+                "Ambos comparan lo mismo",
+                "No hay diferencia"
+            ],
+            "answer": "== compara solo los valores, === compara valores y tipos"
+        },
+        {
+            "question": "¿Qué es JSON?",
+            "options": [
+                "Un formato de archivo de texto",
+                "Un lenguaje de programación",
+                "Un objeto en JavaScript",
+                "Un método de JavaScript"
+            ],
+            "answer": "Un formato de archivo de texto"
+        },
+        {
+            "question": "¿Cómo se define una función anónima en JavaScript?",
+            "options": [
+                "function() {}",
+                "function name() {}",
+                "() => {}",
+                "def() {}"
+            ],
+            "answer": "() => {}"
+        },
+        {
+            "question": "¿Qué hace el método .filter() en un array?",
+            "options": [
+                "Elimina elementos del array",
+                "Devuelve un nuevo array con los elementos que pasan una condición",
+                "Modifica el array original",
+                "Devuelve el primer elemento que cumple una condición"
+            ],
+            "answer": "Devuelve un nuevo array con los elementos que pasan una condición"
+        },
+        {
+            "question": "¿Cuál es el resultado de typeof null en JavaScript?",
+            "options": ["object", "null", "undefined", "boolean"],
+            "answer": "object"
+        },
+        {
+            "question": "¿Cómo se accede a un valor dentro de un objeto en JavaScript?",
+            "options": ["obj.key", "obj[key]", "obj.key()", "Ambas anteriores"],
+            "answer": "Ambas anteriores"
+        },
+        {
+            "question": "¿Qué hace el método .reduce() en un array?",
+            "options": [
+                "Devuelve un valor único basado en una función de acumulación",
+                "Modifica el array original",
+                "Devuelve un nuevo array",
+                "Ordena el array"
+            ],
+            "answer": "Devuelve un valor único basado en una función de acumulación"
+        },
+        {
+            "question": "¿Qué es una promesa en JavaScript?",
+            "options": [
+                "Una función que se ejecuta de forma asíncrona",
+                "Un tipo de objeto que representa un valor que puede estar disponible en el futuro",
+                "Un tipo de bucle",
+                "Una estructura de datos"
+            ],
+            "answer": "Un tipo de objeto que representa un valor que puede estar disponible en el futuro"
+        },
+        {
+            "question": "¿Qué método se usa para convertir un string a un número en JavaScript?",
+            "options": [
+                "parseInt()",
+                "parseFloat()",
+                "Number()",
+                "Todas las anteriores"
+            ],
+            "answer": "Todas las anteriores"
+        },
+        {
+            "question": "¿Cómo se detiene la ejecución de una función en JavaScript?",
+            "options": ["return", "break", "continue", "exit"],
+            "answer": "return"
+        },
+        {
+            "question": "¿Qué es el DOM en JavaScript?",
+            "options": [
+                "Un tipo de objeto en JavaScript",
+                "Una interfaz para interactuar con la estructura HTML de una página web",
+                "Una librería de JavaScript",
+                "Un framework de JavaScript"
+            ],
+            "answer": "Una interfaz para interactuar con la estructura HTML de una página web"
+        },
+        {
+            "question": "¿Cómo se declara una constante en JavaScript?",
+            "options": ["let", "var", "const", "constant"],
+            "answer": "const"
+        }
+    ]
+}
