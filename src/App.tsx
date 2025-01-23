@@ -2,6 +2,7 @@ import { Stack } from '@mui/material'
 import './App.css'
 import { Header } from './components/Header'
 import { JavaScriptLogo } from './components/JavaScriptLogo'
+import { StartButton } from './components/StartButton'
 
 function App() {
     return (
@@ -10,6 +11,8 @@ function App() {
                 <JavaScriptLogo />
                 <Header />
             </Stack>
+
+            <StartButton />
         </>
     )
 }
