@@ -11,6 +11,7 @@ import {
 } from '@mui/material'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { Footer } from './components/Footer'
 import { useQuestionStore } from './store/questions'
 import { type IQuestion } from './types'
 
@@ -115,6 +116,7 @@ export const Game = () => {
                 </IconButton>
             </Stack>
             <Question info={questionInfo} />
+            <Footer />
         </>
     )
 }
