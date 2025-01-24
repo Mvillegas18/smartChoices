@@ -1,9 +1,12 @@
+import { ArrowBack, ArrowForward } from '@mui/icons-material'
 import {
     Card,
+    IconButton,
     List,
     ListItem,
     ListItemButton,
     ListItemText,
+    Stack,
     Typography,
 } from '@mui/material'
 import SyntaxHighlighter from 'react-syntax-highlighter'
@@ -80,8 +83,38 @@ const Question = ({ info }: QuestionProp) => {
 export const Game = () => {
     const questions = useQuestionStore((state) => state.questions)
     const currentQuestion = useQuestionStore((state) => state.currentQuestion)
+    const goNextQuestion = useQuestionStore((state) => state.goNextQuestion)
+    const goPreviousQuestion = useQuestionStore(
+        (state) => state.goPreviousQuestion
+    )
 
     const questionInfo = questions[currentQuestion]
 
-    return <Question info={questionInfo} />
+    return (
+        <>
+            <Stack
+                direction={'row'}
+                gap={2}
+                alignItems={'center'}
+                justifyContent={'center'}
+            >
+                <IconButton
+                    onClick={goPreviousQuestion}
+                    disabled={currentQuestion === 0}
+                >
+                    <ArrowBack />
+                </IconButton>
+                <Typography variant={'h6'}>
+                    {currentQuestion + 1}/{questions.length}
+                </Typography>
+                <IconButton
+                    onClick={goNextQuestion}
+                    disabled={currentQuestion >= questions.length - 1}
+                >
+                    <ArrowForward />
+                </IconButton>
+            </Stack>
+            <Question info={questionInfo} />
+        </>
+    )
 }
