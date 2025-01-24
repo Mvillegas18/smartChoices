@@ -3,6 +3,7 @@ import './App.css'
 import { Header } from './components/Header'
 import { JavaScriptLogo } from './components/JavaScriptLogo'
 import { StartButton } from './components/StartButton'
+import { Game } from './Game'
 import { useQuestionStore } from './store/questions'
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
             </Stack>
 
             {questions.length === 0 && <StartButton />}
-            {questions.length > 0 && <h2>Juego</h2>}
+            {questions.length > 0 && <Game />}
         </>
     )
 }
