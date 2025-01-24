@@ -8,7 +8,6 @@ import { useQuestionStore } from './store/questions'
 
 function App() {
     const questions = useQuestionStore((state) => state.questions)
-    console.log(questions)
 
     return (
         <>
