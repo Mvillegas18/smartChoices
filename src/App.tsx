@@ -3,8 +3,12 @@ import './App.css'
 import { Header } from './components/Header'
 import { JavaScriptLogo } from './components/JavaScriptLogo'
 import { StartButton } from './components/StartButton'
+import { useQuestionStore } from './store/questions'
 
 function App() {
+    const questions = useQuestionStore((state) => state.questions)
+    console.log(questions)
+
     return (
         <>
             <Stack direction={'row'} gap={0.5} alignItems={'center'}>
@@ -12,7 +16,8 @@ function App() {
                 <Header />
             </Stack>
 
-            <StartButton />
+            {questions.length === 0 && <StartButton />}
+            {questions.length > 0 && <h2>Juego</h2>}
         </>
     )
 }
