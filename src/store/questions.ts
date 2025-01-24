@@ -5,9 +5,10 @@ interface state {
     questions: IQuestion[]
     currentQuestion: number
     fetchQuestions: (limit: number) => Promise<void>
+    selectAnswer: (questionId: number, answerIndex: number) => void
 }
 
-export const useQuestionStore = create<state>((set) => ({
+export const useQuestionStore = create<state>((set, get) => ({
     questions: [],
     currentQuestion: 0,
     fetchQuestions: async (limit: number) => {
@@ -16,5 +17,30 @@ export const useQuestionStore = create<state>((set) => ({
         const questions = json.sort(() => Math.random() - 0.5).slice(0, limit)
 
         set({ questions })
+    },
+    selectAnswer: (questionId, answerIndex) => {
+        const { questions } = get()
+
+        // Clone the questions array
+        const newQuestions = structuredClone(questions)
+
+        // Find the question index
+        const questionIndex = newQuestions.findIndex((q) => q.id === questionId)
+
+        // Find the question
+        const infoQuestion = newQuestions[questionIndex]
+
+        // Check if the answer is correct
+        const isCorrectAnswer = infoQuestion.correctAnswer === answerIndex
+
+        // Update the question with the user's answer
+        newQuestions[questionIndex] = {
+            ...infoQuestion,
+            isCorrectUserAnswer: isCorrectAnswer,
+            userSelectedAnswer: answerIndex,
+        }
+
+        // Update the state
+        set({ questions: newQuestions })
     },
 }))
