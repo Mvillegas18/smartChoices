@@ -15,7 +15,36 @@ type QuestionProp = {
     info: IQuestion
 }
 
+const createBackgroundColor = (info: IQuestion, index: number) => {
+    const { correctAnswer, userSelectedAnswer } = info
+    if (userSelectedAnswer == null) {
+        return 'transparent'
+    }
+
+    // If the answer is incorret and the user not selected it
+    if (index !== correctAnswer && index !== userSelectedAnswer) {
+        return 'transparent'
+    }
+
+    // If the answer is correct
+    if (index === correctAnswer) {
+        return '#4caf50'
+    }
+
+    // If the answer is incorrect
+    if (index === userSelectedAnswer) {
+        return '#f44336'
+    }
+
+    return 'transparent'
+}
 const Question = ({ info }: QuestionProp) => {
+    const selectAnswer = useQuestionStore((state) => state.selectAnswer)
+
+    const createHandleClick = (answerIndex: number) => () => {
+        selectAnswer(info.id, answerIndex)
+    }
+
     return (
         <Card
             variant="outlined"
@@ -31,7 +60,11 @@ const Question = ({ info }: QuestionProp) => {
             <List sx={{ bgcolor: '#333' }} disablePadding>
                 {info.answers.map((answer, i) => (
                     <ListItem key={i} disablePadding divider>
-                        <ListItemButton>
+                        <ListItemButton
+                            disabled={info.userSelectedAnswer != null}
+                            onClick={createHandleClick(i)}
+                            sx={{ bgcolor: createBackgroundColor(info, i) }}
+                        >
                             <ListItemText
                                 primary={answer}
                                 sx={{ textAlign: 'center' }}
